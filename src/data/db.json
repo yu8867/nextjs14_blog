@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": "next.js14-udemy",
+      "title": "Next.js14をUdemyで学ぶ",
+      "content": "json-serverは、簡単にREST APIを構築できるツールです。ローカルマシン上にJSONファイルを置くだけで、RESTfulなAPIを作成し、GET、POST、PUT、DELETEなどのHTTPリクエストを使用してデータの取得、作成、更新、削除を行うことができます。json-serverを使用すると、サーバーサイドのプログラミング言語やデータベースを必要とせず、フロントエンドの開発者がAPIの動作をテストしたり、簡単なデモアプリケーションを作成するのに便利です。また、json-serverは簡単に拡張することができ、ルーティングの設定やフック機能を利用することで、より高度なAPIを作成することもできます。",
+      "tag": "Technology",
+      "createdAt": "2021-09-01"
+    },
+    {
+      "id": "json-server-udemy",
+      "title": "Json-ServerをUdemyで学ぶ",
+      "content": "Json-Serverの基本を学んでいます。",
+      "tag": "Sports",
+      "createdAt": "2021-10-01"
+    },
+    {
+      "id": "Vercel-udemy",
+      "title": "VercelをUdemyで学ぶ",
+      "content": "Vercelの基本を学んでいます。",
+      "tag": "Technology",
+      "createdAt": "2022-04-01"
+    }
+  ]
+}
