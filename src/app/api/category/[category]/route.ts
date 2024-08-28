@@ -4,9 +4,12 @@ import { notFound } from "next/navigation";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request, res: NextApiResponse) {
-  const id = req.url.split("/api/blog/")[1];
+  const category = req.url.split("/api/category/")[1];
 
-  let { data, error } = await supabase.from("posts").select("*");
+  let { data, error } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("tag", category);
 
   if (!data) {
     notFound();

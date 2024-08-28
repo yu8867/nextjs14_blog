@@ -5,8 +5,6 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request, res: NextApiResponse) {
   const id = req.url.split("/api/blog/")[1];
-  console.log(req.url);
-  console.log(id);
 
   let { data, error } = await supabase
     .from("posts")

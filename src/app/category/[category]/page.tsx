@@ -1,13 +1,18 @@
 import { getAllArticles } from "@/BlogAPI";
 import ArticleList from "@/components/ArticleList";
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: { category: string };
+}) {
   const API_URL = process.env.NEXT_PUBLIC_PUBLIC_URL;
 
-  const res = await fetch(`${API_URL}/api/blog`, {
+  const res = await fetch(`${API_URL}/api/category/${params.category}`, {
     cache: "no-store",
   });
   const articles = await res.json();
+  const tags = ["Technology", "Automotive", "Finance", "Sports"];
 
   return (
     <div className="md:flex">
@@ -27,18 +32,11 @@ export default async function Home() {
         <div className="bg-white shadow-md rounded p-4 mb-6 mt-4">
           <h3 className="font-bold text-gray-900 mb-2">Category</h3>
           <ul className="text-gray-600 pl-2">
-            <li>
-              <a href={`category/Technology`}>Technology</a>
-            </li>
-            <li>
-              <a href="#">Automotive</a>
-            </li>
-            <li>
-              <a href="#">Finance</a>
-            </li>
-            <li>
-              <a href="#">Sports</a>
-            </li>
+            {tags.map((tag) => (
+              <li key={tag}>
+                <a href={`category/${tag}`}>{tag}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </aside>
